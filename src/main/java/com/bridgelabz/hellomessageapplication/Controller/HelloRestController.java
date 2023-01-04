@@ -27,4 +27,9 @@ public class HelloRestController {
     public String helloWithFullName(@RequestBody User user){
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz !!!";
     }
+
+    @PutMapping("/user/{firstName}")
+    public String hellowithFullName2(@PathVariable String firstName,@RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz !!!";
+    }
 }
