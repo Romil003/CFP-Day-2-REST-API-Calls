@@ -1,6 +1,7 @@
 package com.bridgelabz.hellomessageapplication.Controller;
 
 
+import com.bridgelabz.hellomessageapplication.Model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,5 +21,10 @@ public class HelloRestController {
     @GetMapping("/query/{name}")
     public String sayHelloWithName2(@PathVariable String name){
         return "Hello " + name + " from BridgeLabz !!!";
+    }
+
+    @PostMapping("/user")
+    public String helloWithFullName(@RequestBody User user){
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz !!!";
     }
 }
